@@ -14,9 +14,9 @@ import 'common/stylus/index.styl'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/goods', component: goods },
-  { path: '/ratings', component: ratings },
-  { path: '/seller', component: seller }
+  {path: '/goods', component: goods},
+  {path: '/ratings', component: ratings},
+  {path: '/seller', component: seller}
 ]
 
 const router = new VueRouter({
