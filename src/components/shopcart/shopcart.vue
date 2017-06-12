@@ -25,7 +25,7 @@
           @enter="dropEnter"
           @after-enter="dropAfterEnter"
           name="drop">
-          <div v-for="(ball, index) in balls" v-show="ball.show" class="ball" key="index">
+          <div v-for="(ball, index) in balls" v-show="ball.show" class="ball" key="'a'+index">
             <div class="inner inner-hook"></div>
           </div>
         </transition-group>
@@ -66,11 +66,11 @@
         fold: true,
         balls: [
           /* 五个小球 */
-          { show: false },
-          { show: false },
-          { show: false },
-          { show: false },
           { show: false }
+//          { show: false },
+//          { show: false },
+//          { show: false },
+//          { show: false }
         ],
         dropBalls: []
       }
@@ -177,18 +177,17 @@
         }
       },
       /* 小球进入后 */
-      dropEnter(el, done) {
+      dropEnter(el) {
         /* eslint-disable no-unused-vars */
         let rf = el.offestHeight
-//        this.$nextTick(() => {
-//          /* 重置样式 */
-//          el.style.webkitTransform = 'translate3d(0, 0, 0)'
-//          el.style.transform = 'translate3d(0, 0, 0)'
-//          let inner = el.getElementsByClassName('inner-hook')[0]
-//          inner.style.webkitTransform = 'translate3d(0, 0, 0)'
-//          inner.style.transform = 'translate3d(0, 0, 0)'
-//        })
-        done()
+        this.$nextTick(() => {
+          /* 重置样式 */
+          el.style.webkitTransform = 'translate3d(0, 0, 0)'
+          el.style.transform = 'translate3d(0, 0, 0)'
+          let inner = el.getElementsByClassName('inner-hook')[0]
+          inner.style.webkitTransform = 'translate3d(0, 0, 0)'
+          inner.style.transform = 'translate3d(0, 0, 0)'
+        })
       },
       dropAfterEnter(el) {
         let ball = this.dropBalls.shift()
