@@ -22,6 +22,7 @@
 <script>
   import header from 'components/header/header.vue'
   import axios from 'common/js/axios.js'
+  import data from 'common/data/data.js'
 
   export default {
     name: 'app',
@@ -40,6 +41,10 @@
             this.seller = res.data
           }
         })
+      /* 构建时模拟 api 请求 */
+//      setTimeout(()=>{
+//        this.seller = data.seller
+//      }, 0)
     }
   }
 </script>

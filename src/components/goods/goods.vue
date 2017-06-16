@@ -49,6 +49,7 @@
   import BScroll from 'better-scroll'
   import shopcart from 'components/shopcart/shopcart'
   import cartcontrol from 'components/cartcontrol/cartcontrol'
+  import data from 'common/data/data.js'
   export default {
     name: 'goods',
     components: {
@@ -84,6 +85,14 @@
             })
           }
         })
+      /* 构建时模拟 api 请求 */
+//      setTimeout(() => {
+//        this.goods = data.goods
+//        this.$nextTick(() => {
+//          this._initScroll()
+//          this._calculateHeight()
+//        })
+//      }, 0)
     },
     computed: {
       currentIndex() {
